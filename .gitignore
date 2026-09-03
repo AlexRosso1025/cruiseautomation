@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+*.log
+
+# Salida del modo debug (JSON crudo, reportes) y log de las corridas locales.
+data/debug/
+data/run.log

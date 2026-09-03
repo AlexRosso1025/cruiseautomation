@@ -1,0 +1,22 @@
+{
+  "name": "rcl-price-tracker",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Monitorea el precio de un crucero de Royal Caribbean en el mercado LAC vs US y avisa por email si cambia.",
+  "scripts": {
+    "check": "tsx src/index.ts",
+    "check:local": "tsx --env-file=.env src/index.ts",
+    "debug": "tsx src/debug.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.15"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/nodemailer": "^6.4.15",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

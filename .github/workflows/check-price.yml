@@ -1,0 +1,51 @@
+name: Check Royal Caribbean price
+
+on:
+  schedule:
+    - cron: "0 * * * *" # cada hora (GitHub puede demorar 5-15 min bajo carga)
+  workflow_dispatch: # botón "Run workflow" manual
+
+concurrency:
+  group: rcl-price-check
+  cancel-in-progress: false
+
+permissions:
+  contents: write # para commitear el historial actualizado
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Chequear precio
+        env:
+          # variables (Settings → Secrets and variables → Actions → Variables)
+          TARGET_SAIL_DATE: ${{ vars.TARGET_SAIL_DATE }}
+          PACKAGE_CODE: ${{ vars.PACKAGE_CODE }}
+          GROUP_ID: ${{ vars.GROUP_ID }}
+          SHIP_CODE: ${{ vars.SHIP_CODE }}
+          LAC_COUNTRY_CODE: ${{ vars.LAC_COUNTRY_CODE }}
+          US_ENABLED: ${{ vars.US_ENABLED }}
+          FORCE_EMAIL: ${{ vars.FORCE_EMAIL }}
+          # secrets
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: npm run check
+
+      - name: Commitear historial
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/price-history.json
+          git diff --staged --quiet || git commit -m "chore: snapshot de precio $(date -u +%FT%TZ)"
+          git push
