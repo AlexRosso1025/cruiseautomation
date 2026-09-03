@@ -2,7 +2,12 @@ name: Check Royal Caribbean price
 
 on:
   schedule:
-    - cron: "0 */2 * * *" # cada 2 horas (GitHub puede demorar 5-15 min bajo carga)
+    # Cron en UTC. Objetivo (hora Colombia, UTC-5):
+    #   · 00:00-04:00 local  → cada 2h  (corre 00, 02, 04)
+    #   · 05:00-23:00 local  → cada hora
+    # Local 00,02,04,05..23  ==  UTC 0-5, 7, 9-23  (saltea UTC 6 y 8 = local 01 y 03)
+    # GitHub puede demorar 5-15 min sobre la hora bajo carga.
+    - cron: "0 0-5,7,9-23 * * *"
   workflow_dispatch: # botón "Run workflow" manual
 
 concurrency:
