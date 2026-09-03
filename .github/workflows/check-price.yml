@@ -2,8 +2,8 @@ name: Check Royal Caribbean price
 
 on:
   schedule:
-    # Cada 2 horas. GitHub puede demorar 5-15 min sobre la hora bajo carga.
-    - cron: "0 */2 * * *"
+    # Cada hora. GitHub puede demorar 5-15 min sobre la hora bajo carga.
+    - cron: "0 * * * *"
   workflow_dispatch: # botón "Run workflow" manual
 
 concurrency:
