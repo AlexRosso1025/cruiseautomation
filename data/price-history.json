@@ -4046,5 +4046,49 @@
         "bookingLink": "https://www.royalcaribbean.com/itinerary/7-night-southern-caribbean-cruise-from-cartagena-on-grandeur-GR7IP220?sailDate=2026-10-18&packageCode=GR7IP220&groupId=GR07CTG-1478956324&country=USA"
       }
     }
+  },
+  {
+    "timestamp": "2026-09-17T09:08:18.716Z",
+    "sailDate": "2026-10-18",
+    "markets": {
+      "LAC-ARG": {
+        "currency": "USD",
+        "prices": {
+          "INTERIOR": 1891.75,
+          "OUTSIDE": 3261.75,
+          "BALCONY": 3070.75,
+          "DELUXE": 4280.75
+        },
+        "totals": {
+          "INTERIOR": 3783.5,
+          "OUTSIDE": 6523.5,
+          "BALCONY": 6141.5,
+          "DELUXE": 8561.5
+        },
+        "cheapest": 1891.75,
+        "status": "OPEN",
+        "taxesIncluded": true,
+        "bookingLink": "https://www.royalcaribbean.com/lac/es/itinerary/7-night-southern-caribbean-cruise-from-cartagena-on-grandeur-GR7IP220?sailDate=2026-10-18&packageCode=GR7IP220&groupId=GR07CTG-1478956324&country=ARG"
+      },
+      "US": {
+        "currency": "USD",
+        "prices": {
+          "INTERIOR": 1599.25,
+          "OUTSIDE": 3023.75,
+          "BALCONY": 2826.75,
+          "DELUXE": 3930.75
+        },
+        "totals": {
+          "INTERIOR": 3198.5,
+          "OUTSIDE": 6047.5,
+          "BALCONY": 5653.5,
+          "DELUXE": 7861.5
+        },
+        "cheapest": 1599.25,
+        "status": "OPEN",
+        "taxesIncluded": true,
+        "bookingLink": "https://www.royalcaribbean.com/itinerary/7-night-southern-caribbean-cruise-from-cartagena-on-grandeur-GR7IP220?sailDate=2026-10-18&packageCode=GR7IP220&groupId=GR07CTG-1478956324&country=USA"
+      }
+    }
   }
 ]
