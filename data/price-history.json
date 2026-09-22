@@ -5498,5 +5498,30 @@
         "bookingLink": "https://www.royalcaribbean.com/itinerary/7-night-southern-caribbean-cruise-from-cartagena-on-grandeur-GR7IP220?sailDate=2026-10-18&packageCode=GR7IP220&groupId=GR07CTG-1478956324&country=USA"
       }
     }
+  },
+  {
+    "timestamp": "2026-09-22T19:31:58.886Z",
+    "sailDate": "2026-10-18",
+    "markets": {
+      "LAC-ARG": {
+        "currency": "USD",
+        "prices": {
+          "INTERIOR": null,
+          "OUTSIDE": null,
+          "BALCONY": null,
+          "DELUXE": 4280.75
+        },
+        "totals": {
+          "INTERIOR": null,
+          "OUTSIDE": null,
+          "BALCONY": null,
+          "DELUXE": 8561.5
+        },
+        "cheapest": 4280.75,
+        "status": "OPEN",
+        "taxesIncluded": true,
+        "bookingLink": "https://www.royalcaribbean.com/lac/es/itinerary/7-night-southern-caribbean-cruise-from-cartagena-on-grandeur-GR7IP220?sailDate=2026-10-18&packageCode=GR7IP220&groupId=GR07CTG-1478956324&country=ARG"
+      }
+    }
   }
 ]
